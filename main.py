@@ -14,15 +14,15 @@ if __name__ == "__main__":
                 "https://gq.globo.com/Men-of-the-Year/noticia/2020/12/pabllo-vittar-leva-o-men-year-2020.html"]
     jobs = [JobRequestSiteArticle(url=url, path="./artigos/") for url in site_list]
     queue = Queue("teste", [])
-    queue2 = Queue("teste")
-    queue.enqueue_jobs(jobs)
 
+    queue.enqueue_jobs(jobs)
+    
     worker = Worker("test", "teste")
     worker2 = Worker("test1", "teste")
+
 
     for worker in [worker, worker2]:
         thread = Thread(target=worker.run)
         thread.start()
-    
     
 
