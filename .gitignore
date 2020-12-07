@@ -1,2 +1,6 @@
+# foldes
 venv/
 __pycache__/
+
+# files
+artigos/*.txt
