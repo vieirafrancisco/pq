@@ -16,7 +16,7 @@ def get_site_text(url):
 
 def save_site_article(path, url):
     text = get_site_text(url)
-    title = url.replace("/", "-")
+    title = url.replace("/", "-").replace(":", "")
     with open(f"{path}/{title}.txt", "w") as f:
         f.write(text)
 
